@@ -118,12 +118,11 @@ class RBSheet extends Component {
             activeOpacity={1}
             onPress={() => (closeOnPressMask ? this.close() : null)}
           />
-          <Animated.View
-            {...this.panResponder.panHandlers}
+          <Animated.Viee
             style={[panStyle, styles.container, { height: animatedHeight }, customStyles.container]}
           >
             {closeOnDragDown && (
-              <View style={styles.draggableContainer}>
+              <View {...this.panResponder.panHandlers} style={styles.draggableContainer}>
                 <View style={[styles.draggableIcon, customStyles.draggableIcon]} />
               </View>
             )}
